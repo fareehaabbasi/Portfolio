@@ -63,20 +63,37 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
           
         </motion.a>
         {/* Navigation Items */}
-          <div className='lg:flex items-center space-x-6 '>
+          <div className='hidden lg:flex items-center space-x-6 '>
             {navItems.map((item) => (
               <a 
               key={item.name}
               href={item.href}
               onClick={() => handleNavItemClick(item.name)}
               className= 'relative'
-              >
+              > 
                 <motion.span
-                className={`font-medium transition-colors duration-300`}>
+                className={`font-medium transition-colors duration-300 ${activeSection === item.name.toLowerCase() ? colors.textActive : `${colors.textSecondary} hover:text-orange-500`}`}
+                whileHover={{ scale: 1.05}}
+                whileTap={{scale: 0.95}}>
                   {item.name}
                 </motion.span>
+                {activeSection === item.name.toLowerCase() && (
+                  <motion.div
+                  layoutId="navbar-Indicator"
+                  className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-linear-to-r rounded-full ${colors.indicator}`}>
+
+                  </motion.div>
+                )}
               </a>
             ))}
+          </div>
+          {/* Dark Mode Toggle */}
+          <div
+          className= "flex items-center space-x-2">
+            <motion.button
+            >
+
+            </motion.button>
           </div>
         </div>
 
