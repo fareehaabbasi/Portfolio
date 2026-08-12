@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { Sun, Moon, Menu } from 'lucide-react'
 
 const Navbar = ({ darkMode, toggleDarkMode }) => {
   const [activeSection, setActiveSection] = useState("home")
@@ -42,7 +43,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
 
   return (
     <div className= "flex justify-center w-full fixed z-50 mt-4">
-      <motion.div
+      <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition= {{ duration:0.5}}
@@ -72,7 +73,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
               className= 'relative'
               > 
                 <motion.span
-                className={`font-medium transition-colors duration-300 ${activeSection === item.name.toLowerCase() ? colors.textActive : `${colors.textSecondary} hover:text-orange-500`}`}
+                className={`font-medium transition-colors duration-300 ${activeSection === item.name.toLowerCase() ? colors.textActive : `${colors.textPrimary} hover:text-orange-500`}`}
                 whileHover={{ scale: 1.05}}
                 whileTap={{scale: 0.95}}>
                   {item.name}
@@ -87,17 +88,71 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
               </a>
             ))}
           </div>
+
+
           {/* Dark Mode Toggle */}
           <div
           className= "flex items-center space-x-2">
             <motion.button
+            whileHover={{scale: 1.1}}
+            whileTap={{scale: 0.9}}
+            onClick= {toggleDarkMode}
+            className= {`p-2 rounded-full ${darkMode ? "bg-amber-700" : "bg-gray-200 "} transition-colors`}
+            aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
             >
-
+              {darkMode ? (
+                <Sun className="text-yellow-400 w-5 h-5"/>
+              ): (
+                <Moon className="text-amber-600 w-5 h-5"/>
+              )
+              }
             </motion.button>
-          </div>
-        </div>
 
-      </motion.div>
+
+            {/* Button CTA */}
+            <motion.a
+            href="#contact"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className={`hidden lg:block px-6 py-2 rounded-full font-semibold bg-linear-to-r ${colors.button} text-white shadow:md hover:shadow-lg transition-shadow`}
+            >
+              Work With Me
+            </motion.a>
+          </div>
+
+          {/* Mobile Menu Button */}
+            <div className='lg:hidden flex items-center space-x-4 px-2'>
+              <motion.button
+              whileTap={{ scale: 0.9 }}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className={`p-2 rounded-lg ${darkMode 
+                ? 'bg-amber-700' : 'bg-gray-200'
+              }`}
+              >
+                {isMenuOpen ? (
+                  <X className= {`w-5 h-5 ${darkMode ? 
+                    'text-white' : 'text-gray-950'
+                  }`}/>
+                ) : (
+                  <Menu className={`w-5 h-5 ${darkMode ? 
+                    'text-white' : 'text-gray-950'
+                  }`} />
+                )}
+              </motion.button>
+            </div>
+        </div>
+        {isMenuOpen && (
+          <motion.div
+           initial={{ opacity: 0, height: 0 }}
+           animate={{opacity: 1, height: 'auto'}}
+           exit={{opacity: 0, height: 0}}
+           transition={{duration:0.3}}
+           className={`absolute top-full left-0 right-0 mt-2 lg-hidden
+            ${darkMode ? 'bg-gray-900' : 'bg-white'} backdrop:blur-lg
+            rounded-xl shadow-lg border ${darkMode ? 'border-amber-700' : 'border-gray-200'}`}
+          ></motion.div>
+        )}
+      </motion.nav>
     </div>
   )
 }
