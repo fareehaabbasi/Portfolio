@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Navbar from "./components/Navbar";
+import HeroSec from "./components/HeroSec";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(true);
@@ -36,6 +37,7 @@ const App = () => {
 
   {/* Your Content */}
   <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+  <HeroSec darkMode={darkMode}/>
 </div>
   );
 };

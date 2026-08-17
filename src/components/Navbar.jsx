@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Sun, Moon, Menu } from 'lucide-react'
+import { Sun, Moon, Menu, X } from 'lucide-react'
 
 const Navbar = ({ darkMode, toggleDarkMode }) => {
   const [activeSection, setActiveSection] = useState("home")
@@ -29,7 +29,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
     navBg: 'bg-linear-to-br from-orange-500 to-black', textPrimary: 'text-white',
     textSecondary: 'text-gray-800',
     textHover: 'text-orange-500', 
-    textActive: 'text-orange-600',
+    textActive: 'text-orange-300',
     indicator: 'from-orange-500 to-amber-500',
     button: 'from-orange-500 to-amber-500',
   }
@@ -148,9 +148,34 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
            exit={{opacity: 0, height: 0}}
            transition={{duration:0.3}}
            className={`absolute top-full left-0 right-0 mt-2 lg-hidden
-            ${darkMode ? 'bg-gray-900' : 'bg-white'} backdrop:blur-lg
-            rounded-xl shadow-lg border ${darkMode ? 'border-amber-700' : 'border-gray-200'}`}
-          ></motion.div>
+            ${darkMode ? 'bg-amber-900' : 'bg-white'} backdrop:blur-lg
+            rounded-xl shadow-lg border ${darkMode ? 'border-amber-700' : 'border-amber-700'}`}
+          >
+            <div className='px-4 py-3 space-y-2'>
+              {navItems.map((items) => (
+                <a key={items.name}
+                  href={items.href}
+                  onClick={() => handleNavItemClick(items.name)}
+                  className='block'>
+                    <motion.div whileHover= {{x:5}}
+                    className={`py-3 px-4 rounded-lg text-center ${
+                      activeSection === items.name.toLowerCase() ? darkMode ? 'bg-amber-800' : 'bg-orange-100' : '' 
+                    }`}>
+                      <span className={`font-medium ${activeSection === items.name.toLowerCase() ? colors.textActive : colors.textPrimary }`}> 
+                        {items.name}
+                      </span>
+                    </motion.div>
+                </a>
+              ))}
+              <motion.a 
+              href='#contact'
+              onClick={() => setIsMenuOpen(false)}
+              whileTap= {{scale: 0.95}}
+              className={`block py-3 px-4 text-center font-semibold rounded-lg bg-linear-to-r ${colors.button} text-white shadow-md`}>
+                Work With Me
+              </motion.a>
+            </div>
+          </motion.div>
         )}
       </motion.nav>
     </div>
