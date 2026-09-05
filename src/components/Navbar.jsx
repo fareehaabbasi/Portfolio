@@ -42,7 +42,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
   }
 
   return (
-    <div className= "flex justify-center w-full fixed z-50 mt-4">
+    <div className= "absolute top-0 left-0 w-full flex justify-center w-full fixed z-50 mt-4">
       <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}

@@ -1,8 +1,8 @@
-import { color } from "framer-motion";
+// import { color } from "framer-motion";
 import heroPic from "../assets/HeroPic.png";
 import { ArrowRight } from "lucide-react";
 
-const HeroSec = (darkMode, toggleDarkMode) => {
+const HeroSec = ({darkMode, toggleDarkMode}) => {
   const lightColors = {
     navBg: "bg-linear-to-br from-orange-200 to-white",
     textPrimary: "text-gray-900",
@@ -26,7 +26,8 @@ const HeroSec = (darkMode, toggleDarkMode) => {
   const colors = darkMode ? darkColors : lightColors;
 
   return (
-    <section className="min-h-screen relative overflow-hidden max-w-7xl mx-auto px-6 md:px-20">
+    <section className="min-h-[400px]
+    sm:min-h-screen relative overflow-hidden max-w-7xl mx-auto px-6 md:px-20">
      {/* FRONTEND + DEVELOPER */}
 <div
   className="
@@ -36,7 +37,7 @@ const HeroSec = (darkMode, toggleDarkMode) => {
     left-1/2
     -translate-x-1/2
     z-10
-    w-max
+    md:w-max
   "
 >
   {/* HI, I'M FAREEHA */}
@@ -154,7 +155,7 @@ const HeroSec = (darkMode, toggleDarkMode) => {
 </div>
 
       {/* left text */}
-      <div className="text-center sm:text-left flex absolute md:left-16 sm:left-40 left-1/2 -translate-x-1/2 md:translate-x-0 top-[50vw] sm:top-[260px] md:top-[350px] lg:top-96 z-50 text-orange-100">
+      <div className="text-center sm:text-left flex absolute md:left-16 sm:left-40 left-1/2 -translate-x-1/2 md:translate-x-0 top-[250px] sm:top-[260px] md:top-[350px] lg:top-96 z-30 text-orange-100">
         {/* Main text */}
         <div>
           <h5 className="sm:w-60 w-80 text-sm md:text-base">
