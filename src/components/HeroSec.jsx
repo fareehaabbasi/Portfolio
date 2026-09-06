@@ -1,8 +1,8 @@
-// import { color } from "framer-motion";
+import { motion } from "framer-motion";
 import heroPic from "../assets/HeroPic.png";
 import { ArrowRight } from "lucide-react";
 
-const HeroSec = ({darkMode, toggleDarkMode}) => {
+const HeroSec = ({ darkMode, toggleDarkMode }) => {
   const lightColors = {
     navBg: "bg-linear-to-br from-orange-200 to-white",
     textPrimary: "text-gray-900",
@@ -26,163 +26,302 @@ const HeroSec = ({darkMode, toggleDarkMode}) => {
   const colors = darkMode ? darkColors : lightColors;
 
   return (
-    <section className="min-h-[400px]
-    sm:min-h-screen relative overflow-hidden max-w-7xl mx-auto px-6 md:px-20">
-     {/* FRONTEND + DEVELOPER */}
-<div
-  className="
-    absolute
-    top-28
-    md:top-34
-    left-1/2
-    -translate-x-1/2
-    z-10
-    md:w-max
-  "
->
-  {/* HI, I'M FAREEHA */}
-  <div
-    className="
-      absolute
-      left-0
-      top-[-1.4rem]
-      sm:top-[-2rem]
-      md:top-[-2rem]
-      lg:top-[-3rem]
-
-      font-bold
-      text-xs
-      sm:text-sm
-      md:text-base
-      lg:text-lg
-
-      whitespace-nowrap
-    "
-  >
-    HI, I'M <span className="text-orange-500">FAREEHA</span>
-  </div>
-
-  {/* FRONTEND */}
-  <h1
-    className="
-      font-frontend
-      text-[clamp(5rem,20vw,24rem)]
-      leading-[0.8]
-      tracking-widest
-      text-[#F5E6D3]
-      whitespace-nowrap
-      uppercase
-    "
-  >
-    Frontend
-  </h1>
-
-  {/* DEVELOPER */}
-  <div
-    className="
-      absolute
-      right-0
-      bottom-[-0.02em]
-      translate-x-[5%]
-      bg-black
-      z-30
-    "
-  >
-    <h5
-      className="
-        font-frontend
-        text-orange-500
-        font-bold
-        leading-none
-        text-[clamp(1.5rem,4vw,4rem)]
-        whitespace-nowrap
-      "
+    <section
+      className="min-h-[400px]
+      sm:min-h-screen relative overflow-hidden max-w-8xl mx-auto px-7 md:px-20"
     >
-      DEVELOPER
-    </h5>
-  </div>
-</div>
+      {/* FRONTEND + DEVELOPER */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 1,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+        className="
+          absolute
+          top-28
+          md:top-34
+          left-1/2
+          -translate-x-1/2
+          z-10
+          md:w-max
+        "
+      >
+        {/* HI, I'M FAREEHA */}
+        <motion.div
+          initial={{ opacity: 0, x: -25 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.2,
+            ease: "easeOut",
+          }}
+          className="
+            absolute
+            left-0
+            top-[-1.4rem]
+            sm:top-[-2rem]
+            md:top-[-2rem]
+            lg:top-[-3rem]
 
-    {/* HERO IMAGE */}
-<div
-  className="
-    absolute
-    left-1/2
-    -translate-x-1/2
+            font-bold
+            text-xs
+            sm:text-sm
+            md:text-base
+            lg:text-lg
 
-    top-[2.5rem]
-    sm:top-[-0.2rem]
-    md:top-[1rem]
-    lg:top-[-2rem]
-    xl:top-[-3rem]
+            whitespace-nowrap
+          "
+        >
+          HI, I'M <span className="text-orange-500">FAREEHA</span>
+        </motion.div>
 
-    z-20
-    flex
-    justify-center
-    pointer-events-none
-  "
->
-  <img
-    src={heroPic}
-    alt="Fareeha - Frontend Developer"
-    className="
-      h-auto
-      object-contain
+        {/* FRONTEND */}
+        <motion.h1
+          initial={{ opacity: 0, scale: 0.92, y: 30 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{
+            duration: 1.2,
+            delay: 0.15,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className={`
+    font-frontend
+    text-[clamp(5rem,20vw,24rem)]
+lg:text-[clamp(5rem,19vw,20rem)]
+    leading-[0.8]
+    tracking-widest
+    ${darkMode ? "text-[#F5E6D3]" : "text-orange-500"}
+    whitespace-nowrap
+    uppercase
+    transition-colors
+    duration-500
+  `}
+        >
+          Frontend
+        </motion.h1>
 
-      w-[42vw]
-      max-w-[220px]
+        {/* DEVELOPER */}
+        <motion.div
+          initial={{ opacity: 0, x: 35 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            duration: 0.9,
+            delay: 0.55,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="
+            absolute
+            right-0
+            bottom-[-0.02em]
+            translate-x-[5%]
+            bg-black
+            z-30
+          "
+        >
+          <h5
+            className="
+              font-frontend
+              text-orange-500
+              font-bold
+              leading-none
+              text-[clamp(1.5rem,4vw,4rem)]
+              whitespace-nowrap
+            "
+          >
+            DEVELOPER
+          </h5>
+        </motion.div>
+      </motion.div>
 
-      sm:w-[40vw]
-      sm:max-w-[290px]
+      {/* HERO IMAGE */}
+      <motion.div
+        initial={{ opacity: 0, y: 45, scale: 0.96 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{
+          duration: 1.3,
+          delay: 0.25,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+        className="
+          absolute
+          left-1/2
+          -translate-x-1/2
 
-      md:w-[38vw]
-      md:max-w-[400px]
+          top-[2.5rem]
+          sm:top-[-0.2rem]
+          md:top-[1rem]
+          lg:top-[-2rem]
+          xl:top-[-3rem]
 
-      lg:w-[34vw]
-      lg:max-w-[600px]
+          z-20
+          flex
+          justify-center
+          pointer-events-none
+        "
+      >
+        <img
+          src={heroPic}
+          alt="Fareeha - Frontend Developer"
+          className="
+            h-auto
+            object-contain
 
-      xl:w-[38vw]
-      xl:max-w-[700px]
+            w-[42vw]
+            max-w-[220px]
 
-      /* bottom crop */
-      [clip-path:inset(0_0_40px_0)]
+            sm:w-[40vw]
+            sm:max-w-[290px]
 
-      sm:[clip-path:inset(0_0_100px_0)]
+            md:w-[38vw]
+            md:max-w-[400px]
 
-      md:[clip-path:inset(0_0_0_0)]
-    "
-  />
-</div>
+            lg:w-[34vw]
+            lg:max-w-[600px]
 
-      {/* left text */}
-      <div className="text-center sm:text-left flex absolute md:left-16 sm:left-40 left-1/2 -translate-x-1/2 md:translate-x-0 top-[250px] sm:top-[260px] md:top-[350px] lg:top-96 z-30 text-orange-100">
-        {/* Main text */}
+            xl:w-[38vw]
+            xl:max-w-[700px]
+
+            [clip-path:inset(0_0_40px_0)]
+
+            sm:[clip-path:inset(0_0_100px_0)]
+
+            md:[clip-path:inset(0_0_0_0)]
+          "
+        />
+      </motion.div>
+
+      {/* LEFT TEXT */}
+      <motion.div
+        initial={{ opacity: 0, x: -40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{
+          duration: 0.9,
+          delay: 0.75,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+        className={`
+          text-center
+          sm:text-left
+          flex
+          absolute
+          xl:left-32
+          md:left-20
+          md:left-11
+          sm:left-40
+          left-1/2
+          -translate-x-1/2
+          md:translate-x-0
+          top-[250px]
+          sm:top-[260px]
+          md:top-[350px]
+          xl:top-[490px]
+          lg:top-96
+          z-30
+          ${darkMode ? "text-[#F5E6D3]" : "text-black-500"}
+        `}
+      >
         <div>
-          <h5 className="sm:w-60 w-80 text-sm md:text-base">
+          <h5 className="xl:w-96 sm:w-60 w-80 text-sm md:text-base xl:text-xl">
             I BUILD MODERN, FAST & RESPONSIVE WEBSITES THAT HELP BUSINESSES
             GROW.
           </h5>
 
-          <button className="mt-2 w-fit mx-auto sm:mx-0 border text-sm rounded-lg border-orange-500 px-5 py-2 text-orange-500 flex items-center gap-3 font-extrabold">
+          <motion.button
+            whileHover={{
+              scale: 1.05,
+              x: 4,
+            }}
+            whileTap={{
+              scale: 0.96,
+            }}
+            transition={{
+              duration: 0.2,
+            }}
+            className="
+              mt-2
+              w-fit
+              mx-auto
+              sm:mx-0
+              border
+              text-sm
+              rounded-lg
+              border-orange-500
+              xl:px-8
+              px-5
+              xl:py-4
+              py-2
+              text-orange-500
+              flex
+              items-center
+              gap-3
+              font-extrabold
+              xl:text-lg
+            "
+          >
             View My Work
-            <ArrowRight className="text-lg text-orange-500" />
-          </button>
+            <motion.span
+              animate={{ x: [0, 4, 0] }}
+              transition={{
+                duration: 1.4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <ArrowRight className="text-lg text-orange-500" />
+            </motion.span>
+          </motion.button>
         </div>
-      </div>
+      </motion.div>
 
-      {/* right text */}
-      {/* Mobile only text */}
-      <div className="sm:block hidden absolute right-0 -translate-x-24 sm:-translate-x-14 w-60 text-right top-[240px] sm:top-[260px] md:top-[350px] lg:top-96 z-50 text-orange-100">
-        <h5 className="text-sm">
+      {/* RIGHT TEXT */}
+      <motion.div
+        initial={{ opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{
+          duration: 0.9,
+          delay: 0.9,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+        className="
+          sm:block
+          hidden
+          absolute
+          right-0
+          -translate-x-24
+          sm:-translate-x-20
+          xl:-translate-x-32
+          w-60
+          text-right
+          top-[240px]
+          sm:top-[260px]
+          md:top-[350px]
+          xl:top-[490px]
+          lg:top-96
+          z-50
+          text-orange-100
+        "
+      >
+        <h5 className="text-sm xl:text-base xl:text-xl">
           LET’S TURN IDEAS INTO DIGITAL EXPERIENCES.
         </h5>
 
-        <h5 className="mt-3 text-orange-500 font-serif text-xl">
+        <motion.h5
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 1.2,
+          }}
+          className="mt-3 text-orange-500 font-serif text-xl xl:text-2xl font-bold"
+        >
           FAREEHA ABBASI
-        </h5>
-      </div>
+        </motion.h5>
+      </motion.div>
     </section>
   );
 };
 
 export default HeroSec;
+
