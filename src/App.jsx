@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import HeroSec from "./components/HeroSec";
 import AboutSec from "./components/AboutSec";
 import Skills from "./components/Skills";
+import ServicesOffer from "./components/ServicesOffer";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(true);
@@ -53,6 +54,9 @@ const App = () => {
 
       {/* Skills */}
       <Skills darkMode={darkMode} />
+
+      {/* Services */}
+      <ServicesOffer darkMode={darkMode} />
     </div>
   );
 };

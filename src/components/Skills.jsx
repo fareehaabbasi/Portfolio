@@ -89,7 +89,7 @@ const SkillsSec = ({ darkMode }) => {
       id="skills"
       className={`min-h-screen ${colors.section} transition-colors duration-500 overflow-hidden`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-18 md:py-18">
 
         {/* Section Heading */}
         <motion.div
