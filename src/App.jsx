@@ -4,6 +4,7 @@ import "aos/dist/aos.css";
 import Navbar from "./components/Navbar";
 import HeroSec from "./components/HeroSec";
 import AboutSec from "./components/AboutSec";
+import Skills from "./components/Skills";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(true);
@@ -49,6 +50,9 @@ const App = () => {
 
       {/* About */}
       <AboutSec darkMode={darkMode} />
+
+      {/* Skills */}
+      <Skills darkMode={darkMode} />
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import aboutImg from "../assets/aboutImg.jpeg";
 
 const AboutSec = ({ darkMode }) => {
@@ -25,65 +26,119 @@ const AboutSec = ({ darkMode }) => {
       id="about"
       className={`min-h-screen ${colors.section} transition-colors duration-500 overflow-hidden`}
     >
-      <div className="max-w-8xl mx-auto px-6 md:px-12 lg:px-20 py-20 md:py-28">
-        
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20 md:py-28">
+
         {/* Section Heading */}
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-16"
+        >
           <p className="text-orange-500 uppercase tracking-[0.3em] text-sm font-semibold mb-3">
             About Me
           </p>
 
-          <h2
-            className={`text-4xl md:text-5xl font-bold ${colors.heading}`}
-          >
+          <h2 className={`text-4xl md:text-5xl font-bold ${colors.heading}`}>
             Turning Ideas Into{" "}
-            <span className="text-orange-500">Digital Experiences</span>
+            <span className="text-orange-500">
+              Digital Experiences
+            </span>
           </h2>
-        </div>
+        </motion.div>
 
-        {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
           {/* Image */}
-          <div className="relative flex justify-center">
-            
+          <motion.div
+            initial={{ opacity: 0, x: -80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+            className="relative flex justify-center"
+          >
             {/* Decorative glow */}
-            <div className="absolute w-72 h-72 md:w-96 md:h-96 bg-orange-500/20 blur-3xl rounded-full" />
+            <motion.div
+              animate={{
+                scale: [1, 1.1, 1],
+                opacity: [0.2, 0.4, 0.2],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="absolute w-72 h-72 md:w-96 md:h-96 bg-orange-500/20 blur-3xl rounded-full"
+            />
 
-            {/* Image frame */}
             <div className="relative">
-              <div className="absolute -inset-3 border-2 border-orange-500 rounded-3xl rotate-3 opacity-60" />
+              {/* Rotated Border */}
+              <motion.div
+                initial={{ rotate: -5, opacity: 0 }}
+                whileInView={{ rotate: 3, opacity: 0.6 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="absolute -inset-3 border-2 border-orange-500 rounded-3xl"
+              />
 
-              <div className="relative w-72 h-80 md:w-96 md:h-[450px] rounded-3xl overflow-hidden border border-orange-500/30 shadow-2xl">
+              {/* Image */}
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.4 }}
+                className="relative w-72 h-80 md:w-96 md:h-[450px] rounded-3xl overflow-hidden border border-orange-500/30 shadow-2xl"
+              >
                 <img
                   src={aboutImg}
                   alt="About Fareeha"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover"
                 />
-              </div>
+              </motion.div>
 
-              {/* Experience badge */}
-              <div
+              {/* Experience Badge */}
+              <motion.div
+                initial={{ opacity: 0, y: 40, scale: 0.8 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.5,
+                  type: "spring",
+                  stiffness: 120,
+                }}
+                whileHover={{ y: -5 }}
                 className={`absolute -bottom-6 -right-6 md:-right-8 px-6 py-4 rounded-2xl border backdrop-blur-md shadow-xl ${colors.card}`}
               >
                 <p className="text-2xl font-bold text-orange-500">
                   MERN
                 </p>
+
                 <p className={`text-sm ${colors.muted}`}>
                   Stack Developer
                 </p>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Content */}
-          <div>
-            <p className="text-orange-500 font-semibold text-lg mb-3">
-              Hello, I'm Fareeha 👋
-            </p>
+          <motion.div
+            initial={{ opacity: 0, x: 80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-orange-500 font-semibold text-lg mb-3 text-center sm:text-left"
+            >
+              Hello, I'm Fareeha Abbasi 👋
+            </motion.p>
 
             <h3
-              className={`text-3xl md:text-4xl font-bold leading-tight mb-6 ${colors.heading}`}
+              className={`text-3xl md:text-4xl font-bold leading-tight mb-6 text-center sm:text-left ${colors.heading}`}
             >
               I build modern websites that are{" "}
               <span className="text-orange-500">
@@ -91,64 +146,47 @@ const AboutSec = ({ darkMode }) => {
               </span>
             </h3>
 
-            <p
-              className={`text-base md:text-lg leading-8 mb-5 ${colors.paragraph}`}
-            >
+            <p className={`text-base md:text-lg leading-8 mb-5 text-center sm:text-left ${colors.paragraph}`}>
               I'm a passionate web developer focused on creating clean,
               responsive and user-friendly digital experiences. I enjoy
               turning ideas and designs into functional websites that look
               great across every screen.
             </p>
 
-            <p
-              className={`text-base md:text-lg leading-8 mb-8 ${colors.paragraph}`}
-            >
+            <p className={`text-base md:text-lg leading-8 mb-8 text-center sm:text-left ${colors.paragraph}`}>
               My journey started with frontend development, and I'm
               continuously expanding my skills in the MERN stack. I love
               learning new technologies, solving problems and building
               projects that make an impact.
             </p>
 
-            {/* Skills */}
-            <div className="flex flex-wrap gap-3 mb-9">
-              {[
-                "HTML",
-                "CSS",
-                "Bootstrap",
-                "JavaScript",
-                "React",
-                "Next.js",
-                "Express.js",
-                "Tailwind CSS",
-                "Node.js",
-                "MongoDB",
-              ].map((skill) => (
-                <span
-                  key={skill}
-                  className="px-4 py-2 rounded-full border border-orange-500/30 text-orange-500 text-sm font-medium hover:bg-orange-500 hover:text-white transition-all duration-300"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-
-            {/* CTA */}
-            <div className="flex flex-wrap gap-4">
-              <a
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="flex flex-wrap gap-4 justify-center sm:justify-start"
+            >
+              <motion.a
                 href="#projects"
-                className="px-7 py-3 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold shadow-lg shadow-orange-500/20 hover:scale-105 transition-transform duration-300"
+                whileHover={{ scale: 1.05, y: -3 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-7 py-3 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold shadow-lg shadow-orange-500/20"
               >
                 View My Work
-              </a>
+              </motion.a>
 
-              <a
+              <motion.a
                 href="#contact"
-                className={`px-7 py-3 rounded-full border border-orange-500 text-orange-500 font-semibold hover:bg-orange-500 hover:text-white transition-all duration-300`}
+                whileHover={{ scale: 1.05, y: -3 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-7 py-3 rounded-full border border-orange-500 text-orange-500 font-semibold hover:bg-orange-500 hover:text-white transition-all duration-300"
               >
                 Let's Connect
-              </a>
-            </div>
-          </div>
+              </motion.a>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
@@ -156,3 +194,4 @@ const AboutSec = ({ darkMode }) => {
 };
 
 export default AboutSec;
+
