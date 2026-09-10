@@ -24,8 +24,10 @@ const Project = ({ darkMode }) => {
       description:
         "A customer support management platform where customers can create support tickets and agents can manage, respond to, and resolve requests efficiently.",
       tech: ["React", "Node.js", "Express", "MongoDB"],
-      github: "https://github.com/fareehaabbasi/Final-FemHackathon",
-      live: "https://final-fem-hackathon-txsk.vercel.app/",
+      github:
+        "https://github.com/fareehaabbasi/Final-FemHackathon",
+      live:
+        "https://final-fem-hackathon-txsk.vercel.app/",
     },
 
     {
@@ -36,8 +38,10 @@ const Project = ({ darkMode }) => {
       description:
         "A modern seafood website redesign created during my frontend internship, focused on responsive layouts, clean visual design, and smooth user interactions.",
       tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-      github: "https://github.com/fareehaabbasi/Meltem-sea-food-redesign",
-      live: "https://meltem-sea-food-redesign.vercel.app/",
+      github:
+        "https://github.com/fareehaabbasi/Meltem-sea-food-redesign",
+      live:
+        "https://meltem-sea-food-redesign.vercel.app/",
     },
 
     {
@@ -48,8 +52,10 @@ const Project = ({ darkMode }) => {
       description:
         "A community portal for Saylani Mass IT Hub students and staff, providing dedicated spaces for lost and found items, complaints, and volunteer registration.",
       tech: ["React", "Supabase", "Tailwind CSS"],
-      github: "https://github.com/fareehaabbasi/FemHack-2026",
-      live: "https://beamish-trifle-ff71ff.netlify.app/",
+      github:
+        "https://github.com/fareehaabbasi/FemHack-2026",
+      live:
+        "https://beamish-trifle-ff71ff.netlify.app/",
     },
 
     {
@@ -60,27 +66,29 @@ const Project = ({ darkMode }) => {
       description:
         "A modern blog platform built with Next.js featuring organized content, categories, pagination, and a responsive interface designed for a smooth reading experience.",
       tech: ["Next.js", "React", "Tailwind CSS"],
-      github: "https://github.com/fareehaabbasi/Blog-website-with-next-js",
-      live: "https://blog-website-with-next-js-yfct-26ysh7tgo.vercel.app/blogs",
+      github:
+        "https://github.com/fareehaabbasi/Blog-website-with-next-js",
+      live:
+        "https://blog-website-with-next-js-yfct-26ysh7tgo.vercel.app",
     },
 
     {
       number: "05",
       title: "Post Application",
       category: "Frontend • Hackathon",
-      // image: image5,
       description:
         "A post management web application with authentication, post creation, post details, and Supabase integration, built as a hands-on hackathon project.",
       tech: ["HTML", "CSS", "JavaScript", "Supabase"],
-      github: "https://github.com/fareehaabbasi/Post-appliction-2nd-Hackathon",
-      live: "https://chimerical-kangaroo-f03563.netlify.app/",
+      github:
+        "https://github.com/fareehaabbasi/Post-appliction-2nd-Hackathon",
+      live:
+        "https://chimerical-kangaroo-f03563.netlify.app/",
     },
 
     {
       number: "06",
       title: "Interview GenAI",
       category: "MERN Stack • In Progress",
-      // image: image6,
       description:
         "An AI-focused full-stack project built with the MERN stack and React, currently under development with features designed around an AI-powered interview experience.",
       tech: ["React", "Node.js", "Express", "MongoDB"],
@@ -93,45 +101,108 @@ const Project = ({ darkMode }) => {
   return (
     <section
       id="projects"
-      className={`relative py-16 md:py-24 overflow-hidden ${
+      className={`relative overflow-hidden py-20 md:py-28 ${
         darkMode ? "bg-black text-white" : "bg-white text-gray-900"
       }`}
     >
-      {/* Background Glow */}
-      <div className="absolute top-40 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-orange-500/10 blur-[150px] rounded-full pointer-events-none" />
+      {/* =========================================
+          BACKGROUND EFFECTS
+      ========================================= */}
 
-      <div className="relative max-w-6xl mx-auto px-5 sm:px-8">
+      <motion.div
+        animate={{
+          x: [0, 80, -40, 0],
+          y: [0, -40, 30, 0],
+          scale: [1, 1.15, 0.9, 1],
+        }}
+        transition={{
+          duration: 14,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute top-40 left-1/2 -translate-x-1/2 h-[500px] w-[500px] rounded-full bg-orange-500/10 blur-[140px] pointer-events-none"
+      />
 
-        {/* Heading */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent" />
+
+      <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
+
+        {/* =========================================
+            SECTION HEADING
+        ========================================= */}
+
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-16 md:mb-20"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{
+            duration: 0.8,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="mb-16 text-center md:mb-24"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 mb-5 rounded-full border border-orange-500/30 bg-orange-500/5 text-orange-500 text-sm font-medium">
-            <Sparkles className="w-4 h-4" />
-            My Recent Work
-          </span>
+          <motion.span
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/5 px-4 py-2 text-sm font-medium text-orange-500 backdrop-blur-sm"
+          >
+            <motion.span
+              animate={{ rotate: [0, 15, -15, 0] }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatDelay: 2,
+              }}
+            >
+              <Sparkles className="h-4 w-4" />
+            </motion.span>
 
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
+            My Recent Work
+          </motion.span>
+
+          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
             Featured{" "}
-            <span className="text-orange-500">Projects</span>
+            <span className="relative text-orange-500">
+              Projects
+
+              {/* Underline */}
+              <motion.span
+                initial={{ width: 0 }}
+                whileInView={{ width: "70%" }}
+                viewport={{ once: true }}
+                transition={{
+                  delay: 0.5,
+                  duration: 0.7,
+                }}
+                className="absolute -bottom-2 left-1/2 h-[3px] -translate-x-1/2 rounded-full bg-orange-500"
+              />
+            </span>
           </h2>
 
-          <p
-            className={`max-w-2xl mx-auto mt-5 text-sm sm:text-base leading-7 ${
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              delay: 0.2,
+              duration: 0.6,
+            }}
+            className={`mx-auto mt-7 max-w-2xl text-sm leading-7 sm:text-base ${
               darkMode ? "text-gray-400" : "text-gray-600"
             }`}
           >
             A collection of projects I've built through hackathons,
             internships, and hands-on development.
-          </p>
+          </motion.p>
         </motion.div>
 
-        {/* Projects */}
-        <div className="space-y-12 md:space-y-20">
+        {/* =========================================
+            PROJECT LIST
+        ========================================= */}
+
+        <div className="space-y-16 md:space-y-24">
           {projects.map((project, index) => {
             const isEven = index % 2 === 0;
 
@@ -141,160 +212,387 @@ const Project = ({ darkMode }) => {
                 initial={{
                   opacity: 0,
                   y: 100,
+                  scale: 0.96,
                 }}
                 whileInView={{
                   opacity: 1,
                   y: 0,
+                  scale: 1,
                 }}
                 viewport={{
                   once: true,
-                  amount: 0.2,
+                  amount: 0.15,
                 }}
                 transition={{
-                  duration: 0.8,
-                  delay: 0.05,
+                  duration: 0.9,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className={`group relative overflow-hidden rounded-3xl border ${
+                whileHover={{
+                  y: -8,
+                }}
+                className={`group relative overflow-hidden rounded-[2rem] border transition-all duration-500 ${
                   darkMode
-                    ? "bg-white/[0.035] border-white/10 hover:border-orange-500/40"
-                    : "bg-gray-50 border-gray-200 hover:border-orange-400/50"
-                } transition-all duration-500`}
+                    ? "border-white/10 bg-white/[0.035] hover:border-orange-500/40 hover:bg-white/[0.05]"
+                    : "border-gray-200 bg-gray-50 hover:border-orange-400/50 hover:bg-white"
+                }`}
               >
-                {/* Orange glow */}
-                <div className="absolute -top-32 -right-32 w-72 h-72 rounded-full bg-orange-500/10 blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                {/* Card Glow */}
+                <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-orange-500/10 blur-[100px] opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
 
                 <div
                   className={`relative grid lg:grid-cols-2 ${
-                    isEven ? "" : "lg:[&>*:first-child]:order-2"
+                    !isEven
+                      ? "lg:[&>*:first-child]:order-2"
+                      : ""
                   }`}
                 >
-                  {/* IMAGE */}
-                  <div className="relative min-h-[280px] sm:min-h-[350px] lg:min-h-[420px] overflow-hidden">
-                    {/* Image */}
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                    />
 
-                    {/* Dark overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  {/* =========================================
+                      IMAGE
+                  ========================================= */}
+
+                  <div className="relative min-h-[300px] overflow-hidden sm:min-h-[380px] lg:min-h-[470px]">
+
+                    {project.image ? (
+                      <motion.img
+                        src={project.image}
+                        alt={project.title}
+                        className="absolute inset-0 h-full w-full object-cover object-center"
+                        whileHover={{
+                          scale: 1.08,
+                        }}
+                        transition={{
+                          duration: 0.8,
+                          ease: "easeOut",
+                        }}
+                      />
+                    ) : (
+                      <div
+                        className={`absolute inset-0 flex items-center justify-center ${
+                          darkMode
+                            ? "bg-zinc-900"
+                            : "bg-gray-100"
+                        }`}
+                      >
+                        <div className="text-center">
+                          <Sparkles className="mx-auto mb-3 h-8 w-8 text-orange-500" />
+
+                          <p
+                            className={`text-sm ${
+                              darkMode
+                                ? "text-gray-500"
+                                : "text-gray-400"
+                            }`}
+                          >
+                            Project Preview
+                          </p>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Image Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80" />
 
                     {/* Number */}
-                    <span className="absolute top-6 left-6 text-6xl sm:text-7xl font-black text-white/10 select-none">
+                    <motion.span
+                      initial={{ opacity: 0, x: -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        delay: 0.2,
+                        duration: 0.6,
+                      }}
+                      className="absolute left-6 top-6 select-none text-7xl font-black tracking-tighter text-white/10 sm:text-8xl"
+                    >
                       {project.number}
-                    </span>
+                    </motion.span>
 
                     {/* Category */}
-                    <div className="absolute bottom-6 left-6">
-                      <span className="inline-flex px-4 py-2 rounded-full bg-orange-500 text-white text-xs sm:text-sm font-semibold shadow-lg shadow-orange-500/20">
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        delay: 0.3,
+                        duration: 0.5,
+                      }}
+                      className="absolute bottom-6 left-6"
+                    >
+                      <span className="inline-flex rounded-full border border-white/20 bg-black/50 px-4 py-2 text-xs font-semibold text-white shadow-lg backdrop-blur-md sm:text-sm">
+                        <span className="mr-2 h-2 w-2 self-center rounded-full bg-orange-500 shadow-[0_0_10px_rgba(249,115,22,0.8)]" />
+
                         {project.category}
                       </span>
-                    </div>
+                    </motion.div>
+
+                    {/* Image Hover Overlay */}
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                      className="absolute inset-0 bg-orange-500/5 transition-opacity duration-500"
+                    />
                   </div>
 
-                  {/* CONTENT */}
-                  <div className="relative flex flex-col justify-center p-7 sm:p-9 lg:p-12">
-                    {/* Number + line */}
-                    <div className="flex items-center gap-3 mb-5">
-                      <span className="text-orange-500 text-sm font-bold tracking-[0.2em]">
+                  {/* =========================================
+                      CONTENT
+                  ========================================= */}
+
+                  <div className="relative flex flex-col justify-center p-7 sm:p-10 lg:p-14">
+
+                    {/* Project Label */}
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{
+                        opacity: 1,
+                        x: 0,
+                      }}
+                      viewport={{ once: true }}
+                      transition={{
+                        delay: 0.15,
+                        duration: 0.5,
+                      }}
+                      className="mb-5 flex items-center gap-3"
+                    >
+                      <span className="text-xs font-bold tracking-[0.25em] text-orange-500 sm:text-sm">
                         PROJECT {project.number}
                       </span>
 
-                      <div className="h-px w-12 bg-orange-500/50" />
-                    </div>
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: 45 }}
+                        viewport={{ once: true }}
+                        transition={{
+                          delay: 0.4,
+                          duration: 0.5,
+                        }}
+                        className="h-px bg-orange-500/50"
+                      />
+                    </motion.div>
 
                     {/* Title */}
-                    <h3
-                      className={`text-3xl sm:text-4xl font-bold leading-tight ${
-                        darkMode ? "text-white" : "text-gray-900"
-                      } group-hover:text-orange-500 transition-colors duration-300`}
+                    <motion.h3
+                      initial={{ opacity: 0, y: 15 }}
+                      whileInView={{
+                        opacity: 1,
+                        y: 0,
+                      }}
+                      viewport={{ once: true }}
+                      transition={{
+                        delay: 0.2,
+                        duration: 0.6,
+                      }}
+                      className={`text-3xl font-bold leading-tight transition-colors duration-300 sm:text-4xl ${
+                        darkMode
+                          ? "text-white group-hover:text-orange-500"
+                          : "text-gray-900 group-hover:text-orange-500"
+                      }`}
                     >
                       {project.title}
-                    </h3>
+                    </motion.h3>
 
                     {/* Description */}
-                    <p
-                      className={`mt-5 text-sm sm:text-base leading-7 ${
-                        darkMode ? "text-gray-400" : "text-gray-600"
+                    <motion.p
+                      initial={{ opacity: 0, y: 15 }}
+                      whileInView={{
+                        opacity: 1,
+                        y: 0,
+                      }}
+                      viewport={{ once: true }}
+                      transition={{
+                        delay: 0.3,
+                        duration: 0.6,
+                      }}
+                      className={`mt-5 max-w-xl text-sm leading-7 sm:text-base ${
+                        darkMode
+                          ? "text-gray-400"
+                          : "text-gray-600"
                       }`}
                     >
                       {project.description}
-                    </p>
+                    </motion.p>
 
                     {/* Tech Stack */}
-                    <div className="flex flex-wrap gap-2 mt-6">
-                      {project.tech.map((tech) => (
-                        <span
+                    <motion.div
+                      initial={{ opacity: 0, y: 15 }}
+                      whileInView={{
+                        opacity: 1,
+                        y: 0,
+                      }}
+                      viewport={{ once: true }}
+                      transition={{
+                        delay: 0.4,
+                        duration: 0.6,
+                      }}
+                      className="mt-7 flex flex-wrap gap-2"
+                    >
+                      {project.tech.map((tech, techIndex) => (
+                        <motion.span
                           key={tech}
-                          className={`px-3 py-1.5 rounded-lg text-xs font-medium ${
+                          initial={{
+                            opacity: 0,
+                            scale: 0.8,
+                          }}
+                          whileInView={{
+                            opacity: 1,
+                            scale: 1,
+                          }}
+                          viewport={{
+                            once: true,
+                          }}
+                          transition={{
+                            delay: 0.45 + techIndex * 0.05,
+                            duration: 0.35,
+                          }}
+                          whileHover={{
+                            y: -3,
+                            scale: 1.05,
+                          }}
+                          className={`cursor-default rounded-lg border px-3 py-1.5 text-xs font-medium transition-all duration-300 ${
                             darkMode
-                              ? "bg-white/5 text-gray-300 border border-white/10"
-                              : "bg-white text-gray-700 border border-gray-200"
+                              ? "border-white/10 bg-white/5 text-gray-300 hover:border-orange-500/30 hover:bg-orange-500/10 hover:text-orange-400"
+                              : "border-gray-200 bg-white text-gray-700 hover:border-orange-300 hover:bg-orange-50 hover:text-orange-600"
                           }`}
                         >
                           {tech}
-                        </span>
+                        </motion.span>
                       ))}
-                    </div>
+                    </motion.div>
 
                     {/* Buttons */}
-                    <div className="flex flex-wrap gap-3 mt-8">
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{
+                        opacity: 1,
+                        y: 0,
+                      }}
+                      viewport={{ once: true }}
+                      transition={{
+                        delay: 0.5,
+                        duration: 0.6,
+                      }}
+                      className="mt-9 flex flex-wrap gap-3"
+                    >
+                      {/* GitHub */}
                       <motion.a
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={{ scale: 1.04 }}
-                        whileTap={{ scale: 0.97 }}
-                        className={`inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold ${
+                        whileHover={{
+                          scale: 1.04,
+                          y: -2,
+                        }}
+                        whileTap={{
+                          scale: 0.96,
+                        }}
+                        className={`group/button inline-flex items-center justify-center gap-2 rounded-xl border px-5 py-3 text-sm font-semibold transition-all duration-300 ${
                           darkMode
-                            ? "bg-white/5 border border-white/10 text-white hover:bg-white/10"
-                            : "bg-white border border-gray-200 text-gray-800 hover:bg-gray-100"
-                        } transition-colors`}
+                            ? "border-white/10 bg-white/5 text-white hover:border-orange-500/30 hover:bg-white/10"
+                            : "border-gray-200 bg-white text-gray-800 hover:border-orange-300 hover:bg-gray-100"
+                        }`}
                       >
-                        <GitFork className="w-4 h-4" />
+                        <GitFork className="h-4 w-4 transition-transform duration-300 group-hover/button:rotate-12" />
+
                         GitHub
+
+                        <ArrowUpRight className="h-3.5 w-3.5 opacity-50 transition-all duration-300 group-hover/button:translate-x-1 group-hover/button:-translate-y-1 group-hover/button:opacity-100" />
                       </motion.a>
 
+                      {/* Live Demo */}
                       {project.live && (
                         <motion.a
                           href={project.live}
                           target="_blank"
                           rel="noopener noreferrer"
-                          whileHover={{ scale: 1.04 }}
-                          whileTap={{ scale: 0.97 }}
-                          className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold bg-orange-500 hover:bg-orange-600 text-white shadow-lg shadow-orange-500/20 transition-colors"
+                          whileHover={{
+                            scale: 1.04,
+                            y: -2,
+                          }}
+                          whileTap={{
+                            scale: 0.96,
+                          }}
+                          className="group/button inline-flex items-center justify-center gap-2 rounded-xl bg-orange-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-500/20 transition-all duration-300 hover:bg-orange-600 hover:shadow-orange-500/30"
                         >
-                          <ExternalLink className="w-4 h-4" />
+                          <ExternalLink className="h-4 w-4 transition-transform duration-300 group-hover/button:rotate-6" />
+
                           Live Demo
+
+                          <ArrowUpRight className="h-3.5 w-3.5 transition-all duration-300 group-hover/button:translate-x-1 group-hover/button:-translate-y-1" />
                         </motion.a>
                       )}
-                    </div>
+                    </motion.div>
 
-                    {/* Arrow */}
-                    <ArrowUpRight className="absolute bottom-8 right-8 w-7 h-7 text-orange-500/20 group-hover:text-orange-500 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
+                    {/* Decorative Arrow */}
+                    <motion.div
+                      initial={{
+                        opacity: 0,
+                        scale: 0.5,
+                      }}
+                      whileInView={{
+                        opacity: 1,
+                        scale: 1,
+                      }}
+                      viewport={{ once: true }}
+                      transition={{
+                        delay: 0.5,
+                        duration: 0.5,
+                      }}
+                      className="absolute bottom-8 right-8 hidden sm:block"
+                    >
+                      <ArrowUpRight
+                        className={`h-8 w-8 transition-all duration-500 ${
+                          darkMode
+                            ? "text-white/10 group-hover:text-orange-500"
+                            : "text-gray-200 group-hover:text-orange-500"
+                        } group-hover:translate-x-2 group-hover:-translate-y-2`}
+                      />
+                    </motion.div>
                   </div>
                 </div>
 
-                {/* Bottom orange line */}
-                <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-40 group-hover:opacity-100 transition-opacity duration-500" />
+                {/* Bottom Line */}
+                <motion.div
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 0.4 }}
+                  whileHover={{ scaleX: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.8,
+                    ease: "easeOut",
+                  }}
+                  className="absolute bottom-0 left-0 right-0 h-[2px] origin-center bg-gradient-to-r from-transparent via-orange-500 to-transparent"
+                />
               </motion.article>
             );
           })}
         </div>
 
-        {/* GitHub CTA */}
+        {/* =========================================
+            GITHUB CTA
+        ========================================= */}
+
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mt-16 md:mt-20"
+          initial={{
+            opacity: 0,
+            y: 40,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.3,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
+          className="mt-20 text-center md:mt-28"
         >
           <p
-            className={`text-sm mb-4 ${
-              darkMode ? "text-gray-400" : "text-gray-600"
+            className={`mb-5 text-sm ${
+              darkMode
+                ? "text-gray-400"
+                : "text-gray-600"
             }`}
           >
             Want to explore more of my work?
@@ -304,13 +602,20 @@ const Project = ({ darkMode }) => {
             href="https://github.com/fareehaabbasi"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-orange-500 hover:bg-orange-600 text-white font-semibold shadow-lg shadow-orange-500/20 transition-colors"
+            whileHover={{
+              scale: 1.06,
+              y: -3,
+            }}
+            whileTap={{
+              scale: 0.97,
+            }}
+            className="group inline-flex items-center gap-2 rounded-full bg-orange-500 px-7 py-3.5 font-semibold text-white shadow-xl shadow-orange-500/20 transition-all duration-300 hover:bg-orange-600 hover:shadow-orange-500/30"
           >
-            <GitFork className="w-5 h-5" />
+            <GitFork className="h-5 w-5 transition-transform duration-300 group-hover:rotate-12" />
+
             Explore My GitHub
-            <ArrowUpRight className="w-4 h-4" />
+
+            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
           </motion.a>
         </motion.div>
       </div>
@@ -319,3 +624,4 @@ const Project = ({ darkMode }) => {
 };
 
 export default Project;
+
