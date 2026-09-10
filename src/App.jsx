@@ -7,6 +7,7 @@ import AboutSec from "./components/AboutSec";
 import Skills from "./components/Skills";
 import ServicesOffer from "./components/ServicesOffer";
 import Project from "./components/Project";
+import ContactSec from "./components/ContactSec";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(true);
@@ -61,6 +62,9 @@ const App = () => {
 
       {/* Project */}
       <Project darkMode={darkMode} />
+
+      {/* Contact */}
+      <ContactSec darkMode={darkMode} />
     </div>
   );
 };
