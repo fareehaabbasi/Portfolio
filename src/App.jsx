@@ -8,6 +8,7 @@ import Skills from "./components/Skills";
 import ServicesOffer from "./components/ServicesOffer";
 import Project from "./components/Project";
 import ContactSec from "./components/ContactSec";
+import Footer from "./components/Footer";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(true);
@@ -65,6 +66,9 @@ const App = () => {
 
       {/* Contact */}
       <ContactSec darkMode={darkMode} />
+
+      {/* Footer */}
+      <Footer darkMode={darkMode} />
     </div>
   );
 };
